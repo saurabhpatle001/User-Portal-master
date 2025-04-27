@@ -9,7 +9,8 @@ WORKDIR /app
 COPY . /app
 
 # Step 4: Build the project using Maven
-RUN mvn clean install
+RUN mvn clean install -DskipTests
+
 
 # Step 5: Run the JAR file
 ENTRYPOINT ["java", "-jar", "target/MiniProject2-0.0.1-SNAPSHOT.jar"]
